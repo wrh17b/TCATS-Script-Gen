@@ -6,14 +6,14 @@ function generateScripts(){
 
     let scriptHeader=
 `delete from utc_error_track
-where et_county_nbr=\`${countyNbr}\`
+where et_county_nbr=\'${countyNbr}\'
 and et_citation in`
 
     let rawTCATS = String(document.getElementById("rawTCATS").value).split("\n");
     console.log(`${rawTCATS}`);
 
     for(let i=0; i<rawTCATS.length; i++){
-        rawTCATS[i]=`\`${rawTCATS[i]}\``;
+        rawTCATS[i]=`\'${rawTCATS[i]}\'`;
     }
 
     console.log(`${rawTCATS}`);
